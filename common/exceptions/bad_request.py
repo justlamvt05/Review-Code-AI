@@ -1,0 +1,15 @@
+from common.exceptions.base import AppException
+
+
+class BadRequestException(AppException):
+
+    def __init__(
+        self,
+        message: str = "Bad request",
+        error_code: str | None = None,
+    ):
+        super().__init__(
+            message=message,
+            status_code=400,
+            error_code=error_code,
+        )
